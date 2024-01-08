@@ -12,7 +12,8 @@ class PlaylistController extends Controller
      */
     public function index()
     {
-        //
+        $playlist = Playlist::all();
+        return view('playlist.index', ['playlist'=>$playlist]);
     }
 
     /**
@@ -20,7 +21,7 @@ class PlaylistController extends Controller
      */
     public function create()
     {
-        //
+        return view('playlist.create', []);
     }
 
     /**
@@ -28,7 +29,14 @@ class PlaylistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => "string|required"
+        ]);
+
+        Playlist::create([
+            'name' => $request->name,
+        ]);
+        return redirect(route("playlist.index"));
     }
 
     /**
@@ -36,7 +44,7 @@ class PlaylistController extends Controller
      */
     public function show(Playlist $playlist)
     {
-        //
+        return view('playlist.show', ['playlist'=>$playlist]);
     }
 
     /**
@@ -58,8 +66,10 @@ class PlaylistController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Playlist $playlist)
+    public function destroy($id)
     {
-        //
+        $playlist = Playlist::findOrFail($id);
+        $playlist->delete();
+        return redirect()->route('playlist.index');
     }
 }

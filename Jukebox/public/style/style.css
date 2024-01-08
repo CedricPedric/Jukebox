@@ -1,0 +1,12 @@
+body{
+    background-color: lightcyan !important; 
+}
+
+.white-text{
+    color: white;
+}
+
+.logo-image{
+    max-width: 50%;
+    height: auto;
+}

@@ -1,0 +1,38 @@
+.MusicCard{
+    
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: gray;
+    width: auto;
+    height: 254px;
+    margin-left: 10px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.MusicCard:hover,.MusicCard:active{
+        box-shadow: inset 0 0 10px
+}
+
+.MusicCardImages{
+    align-self: center;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    width: 160px;
+    height: 150px;
+}
+
+.Description{
+    margin: 0px;
+    margin-top: 3px;
+    margin-left: 3px;
+}   
+
+.MusicTitle{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
