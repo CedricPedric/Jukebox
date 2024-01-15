@@ -70,6 +70,6 @@ class PlaylistController extends Controller
     {
         $playlist = Playlist::findOrFail($id);
         $playlist->delete();
-        return redirect()->route('playlist.index');
+        return redirect(route("playlist.index"));
     }
 }

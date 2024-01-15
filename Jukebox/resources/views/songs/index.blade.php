@@ -10,6 +10,8 @@
             <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2 class='MusicTitle'>{{$song->name}}</h2>
                     <p class="Description">{{$song->genre}}</p>
+                    <a href="/songs/{{$song->id}}">[Description]</a> <br>
+                    <a href="/songs/{{$song->id}}">[Add to Playlist]</a>
                 </div>
             @endforeach
             </div>

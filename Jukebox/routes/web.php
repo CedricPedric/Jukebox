@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/songs', [SongsController::class, 'index'])->name('songs.index');
+Route::get('/songs/{songs}', [SongsController::class, 'show'])->name('songs.show');
 
 Route::get('/genres', [GenresController::class, 'index'])->name('genres.index');
 Route::get('/genre/{genres}', [GenresController::class, 'show'])->name('genres.show');
@@ -43,6 +44,7 @@ Route::get('/playlist', [PlaylistController::class, 'index'])->name('playlist.in
 Route::get('/playlist/test/{playlists}', [PlaylistController::class, 'show'])->name('playlist.show');
 Route::get('/playlist/create', [PlaylistController::class, 'create'])->name('playlist.create');
 Route::post('/playlist/store', [PlaylistController::class, 'store'])->name('playlist.store');
-Route::delete('/playlist/de,ete', [PlaylistController::class, 'destroy'])->name('playlist.destroy');
+Route::delete('/playlist/{playlist}', 'PlaylistController@destroy')->name('playlist.destroy');
+
 
 require __DIR__.'/auth.php';
